@@ -26,7 +26,8 @@ WHERE user_id = 4;
 -- Write a query that will obtain the owner’s username and role name, as well as the category name, questions, and answers of flashcard contained within the study set with an id of 1.--
 
 -- Solution d --
-SELECT app_user.username, user_role.name, category.name, flashcard.question, flashcard.answer FROM study_set_card
+SELECT app_user.username, user_role.name, category.name, flashcard.question, flashcard.answer 
+FROM study_set_card
 LEFT JOIN flashcard ON study_set_card.flashcard_id = flashcard.flashcard_id
 LEFT JOIN category ON flashcard.category_id = category.category_id
 LEFT JOIN study_set ON study_set_card.study_set_id = study_set.study_set_id
